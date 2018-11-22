@@ -14,6 +14,13 @@ public interface ApiInterface {
     @FormUrlEncoded
     @POST("Api.php?apicall=login")
     Call<LoginResponse> login(@Field("username") String username, @Field("password") String password);
- 
 
+
+    @FormUrlEncoded
+    @POST("Api.php?apicall=signup")
+    Call<LoginResponse> signup(@Field("username") String username,
+                               @Field("email") String email,
+                               @Field("mobile") String mobile,
+                               @Field("password") String password,
+                               @Field("city")String city);
 }
