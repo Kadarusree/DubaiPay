@@ -152,7 +152,6 @@
                     android:hint="City"
                     android:imeOptions="actionDone"
                     android:singleLine="true"
-                    android:inputType="textPassword"
                     android:maxLength="20"
                     android:textColor="@color/app_theme_color"
                     android:id="@+id/signup_edt_city"
@@ -174,7 +173,7 @@
                 android:text="REGISTER"
                 android:textColor="@color/colorWhite"
                 android:background="@drawable/shape_login_btn"
-                android:textSize="@dimen/dp_18" />
+                android:textSize="@dimen/dp_13" />
         </RelativeLayout>
 
 

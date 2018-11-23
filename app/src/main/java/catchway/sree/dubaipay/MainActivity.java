@@ -52,10 +52,14 @@ public class MainActivity extends Activity {
                 @Override
                 public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
                     mProgressDialog.dismiss();
-                    Toast.makeText(getApplicationContext(), response.body().getMessage(), Toast.LENGTH_LONG).show();
 
-                    if (!response.body().getError()){
+                    if (!response.body().getMessage().equalsIgnoreCase("Invalid username or password")){
                         startActivity(new Intent(getApplicationContext(), Dashboard.class));
+                        Toast.makeText(getApplicationContext(), "Welcome : "+response.body().getUser().getUsername(), Toast.LENGTH_LONG).show();
+
+                    }
+                    else {
+                        Toast.makeText(getApplicationContext(), response.body().getMessage(), Toast.LENGTH_LONG).show();
                     }
                 }
 
